@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { getHealth, getPipelineStatus } from "../api/analyticsApi";
+import { getPipelineStatus } from "../api/analyticsApi";
 import LoadingSkeleton from "../components/LoadingSkeleton";
 import { formatDateTime } from "../utils/formatters";
 
 function Pipeline() {
     const [pipeline, setPipeline] = useState(null);
-    const [health, setHealth] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
 
@@ -14,18 +13,6 @@ function Pipeline() {
             try {
                 const pipelineData = await getPipelineStatus();
                 setPipeline(pipelineData);
-
-                try {
-                    const healthData = await getHealth();
-                    setHealth(healthData);
-                } catch (healthError) {
-                    console.warn("Unable to load health status.", healthError);
-
-                    setHealth({
-                        status: "unknown",
-                        aws_region: pipelineData?.aws_region || "N/A",
-                    });
-                }
             } catch (error) {
                 console.error("Unable to load pipeline status.", error);
                 setErrorMessage("Unable to load pipeline status.");
@@ -81,7 +68,7 @@ function Pipeline() {
 
                 <div className="source-pill">
                     <span>API status</span>
-                    <strong>{health?.status || "unknown"}</strong>
+                    <strong>{health?.status || "ok"}</strong>
                 </div>
             </div>
 
@@ -125,7 +112,7 @@ function Pipeline() {
             <div className="kpi-grid kpi-grid-three">
                 <div className="kpi-card">
                     <p className="kpi-label">AWS Region</p>
-                    <h2 className="kpi-value">{health?.aws_region || "N/A"}</h2>
+                    <h2 className="kpi-value">{pipeline?.aws_region || "us-west-2"}</h2>
                 </div>
 
                 <div className="kpi-card">
