@@ -6,8 +6,8 @@ The project simulates a real e-commerce analytics workflow where raw sales data 
 
 ## Live Demo
 
-* Frontend: `TODO: add Vercel URL`
-* API Docs: `TODO: add Render API docs URL`
+* Frontend: https://retail-sales-aws-pipeline.vercel.app/
+* API Docs: https://retaillens-api-mfr4.onrender.com/docs
 
 > Note: The backend may be hosted on a free tier, so the first request can take a short time to wake up.
 
