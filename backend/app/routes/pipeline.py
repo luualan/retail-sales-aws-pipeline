@@ -1,5 +1,4 @@
 from fastapi import APIRouter, HTTPException
-
 from app.services.dynamodb_metrics import get_metric_item
 
 

@@ -1,15 +1,4 @@
-# GET /health
-# GET /analytics/summary
-# GET /analytics/monthly-revenue
-# GET /analytics/revenue-by-category
-# GET /analytics/top-products
-# GET /analytics/refund-rate-by-category
-# GET /analytics/orders-by-region
-# GET /pipeline/status
-
-
 from fastapi import APIRouter, HTTPException
-
 from app.services.dynamodb_metrics import get_metric_group, get_metric_item
 
 
