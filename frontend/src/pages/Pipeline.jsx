@@ -68,7 +68,7 @@ function Pipeline() {
 
                 <div className="source-pill">
                     <span>API status</span>
-                    <strong>{health?.status || "ok"}</strong>
+                    <strong>{pipeline?.status || "ok"}</strong>
                 </div>
             </div>
 
@@ -112,7 +112,9 @@ function Pipeline() {
             <div className="kpi-grid kpi-grid-three">
                 <div className="kpi-card">
                     <p className="kpi-label">AWS Region</p>
-                    <h2 className="kpi-value">{pipeline?.aws_region || "us-west-2"}</h2>
+                    <h2 className="kpi-value kpi-value-small">
+                        {pipeline?.aws_region || "us-west-2"}
+                    </h2>
                 </div>
 
                 <div className="kpi-card">
