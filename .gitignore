@@ -1,0 +1,25 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+frontend/dist/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Local/generated data
+data/raw/
+data/generated/
+*.csv
+
+# OS/editor
+.DS_Store
+.vscode/
+
+# Logs
+*.log
