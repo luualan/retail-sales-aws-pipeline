@@ -6,8 +6,8 @@ The project simulates a real e-commerce analytics workflow where raw sales data 
 
 ## Live Demo
 
-* Frontend: https://retail-sales-aws-pipeline.vercel.app/
-* Backend: https://retaillens-api-mfr4.onrender.com/docs
+* Frontend: https://retail.alanluu.net/
+* Backend: https://retail-api.alanluu.net/docs
 
 > Note: The backend may be hosted on a free tier, so the first request can take a short time to wake up.
 
